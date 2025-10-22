@@ -1,6 +1,8 @@
-# Claude Code Skills Library
+# .NET Claude Code Skills Library
 
-This directory contains reusable skills for implementing consistent patterns across the LMP project and similar .NET/DDD projects.
+Production-ready Domain-Driven Design patterns and Entity Framework Core implementations for .NET projects using Claude Code.
+
+> **For Claude Code Users**: See [CLAUDE.md](CLAUDE.md) for information about using this repository with Claude Code.
 
 ## Available Skills
 
@@ -70,45 +72,39 @@ This directory contains reusable skills for implementing consistent patterns acr
 
 ```
 dotnet-claude-code-skills/
-├── README.md                    # This file - skill index
+├── README.md                    # This file - skills catalog
+├── CLAUDE.md                    # Guide for using with Claude Code
 ├── ddd-dotnet/                  # Domain layer patterns
-│   ├── SKILL.md
-│   └── README.md
+│   ├── SKILL.md                 # Comprehensive DDD guide
+│   └── README.md                # DDD overview
 └── ef-core-ddd/                 # Data persistence patterns
-    ├── SKILL.md
-    └── README.md
+    ├── SKILL.md                 # Comprehensive EF Core guide
+    └── README.md                # EF Core overview
 ```
 
 ---
 
 ## How to Use These Skills
 
-### In Claude Code Sessions
+> **Claude Code Users**: For detailed usage instructions with Claude Code, see [CLAUDE.md](CLAUDE.md)
 
-Reference skills directly in your prompts:
+### Quick Reference
 
+**In Code Sessions:**
 ```
 "Using the ddd-dotnet skill, create a new aggregate for Product"
-
 "Following the ef-core-ddd skill, implement the repository for Product"
-
-"Review this code against the patterns in ddd-dotnet/SKILL.md"
 ```
 
-### As Reference Material
+**For Code Reviews:**
+- Validate new code follows documented patterns
+- Identify anti-patterns using "Common Pitfalls" sections
+- Ensure consistency across the codebase
 
-- Open skill files in your IDE for quick reference
+**As Templates:**
 - Copy templates as starting points for new code
 - Use checklists before creating pull requests
-- Share with team members for consistency
-
-### For Code Reviews
-
-Use the "Best Practices" and "Common Pitfalls" sections to:
-- Validate new code follows patterns
-- Identify anti-patterns
-- Suggest improvements
-- Ensure consistency across the codebase
+- Share patterns with team members
 
 ---
 
@@ -243,12 +239,16 @@ These skills are living documents. Update them when:
 
 ---
 
-## License & Usage
+## About This Repository
 
-These skills are internal to the LMP project but can be adapted for other .NET/DDD projects following similar architectural patterns.
+**Purpose**: Skills library for .NET development with Claude Code
+**Focus**: Domain-Driven Design, CQRS, Hexagonal Architecture
+**Technology**: .NET 8+, EF Core 8+, C# 12
+**Usage**: Reference patterns, code templates, best practices
+
+> These skills are based on production code and can be adapted for any .NET/DDD project following hexagonal architecture patterns.
 
 ---
 
 **Last Updated**: 2025-10-22
 **Skills Version**: 1.0
-**Applicable to**: .NET 8+, EF Core 8+, Hexagonal Architecture, DDD
