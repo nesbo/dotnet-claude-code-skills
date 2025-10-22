@@ -1,89 +1,254 @@
-# .NET Claude Code Skills
+# Claude Code Skills Library
 
-State-of-the-art .NET development skills for Claude Code, featuring Domain-Driven Design patterns and best practices for professional software engineering.
-
-## Overview
-
-This repository contains Claude Code skills specifically designed for .NET engineers. These skills provide comprehensive guidance on implementing modern software architecture patterns, clean code principles, and industry best practices in .NET applications.
+This directory contains reusable skills for implementing consistent patterns across the LMP project and similar .NET/DDD projects.
 
 ## Available Skills
 
-### Domain-Driven Design for .NET
+### 1. Domain-Driven Design Basics (`ddd-dotnet/`)
 
-**Path:** `ddd-dotnet/`
+**Purpose**: Core DDD patterns for building the domain layer (ports) in hexagonal architecture.
 
-A comprehensive guide to implementing Domain-Driven Design patterns in .NET, based on real-world production code. This skill covers:
+**What it covers:**
+- Domain object hierarchy (IDomainObject, IAggregate, IEntity)
+- Aggregate root patterns with versioning
+- Repository pattern with CQRS separation
+- Command pattern using Paramore.Brighter
+- Query pattern with ViewModels
+- Time control pattern (IClock)
+- Unit of Work pattern
+- Domain exceptions
+- Best practices and anti-patterns
 
-- **Core DDD Building Blocks**: Aggregates, Entities, Value Objects, and Domain Services
-- **CQRS Pattern**: Separate read and write operations for optimized performance
-- **Hexagonal Architecture**: Ports (domain) and Adapters (infrastructure) separation
-- **Repository Pattern**: Write and Query repositories with proper abstraction
-- **Command & Query Handlers**: Using Paramore.Brighter for commands and simple services for queries
-- **Time Control Pattern**: Deterministic time handling using IClock interface
-- **Domain Exceptions**: Proper error handling with custom domain exceptions
-- **Unit of Work**: Transaction management across multiple repositories
-- **Best Practices**: Patterns from production code including versioned aggregates, change tracking, and more
+**When to use:**
+- Creating new aggregates or entities
+- Implementing command handlers
+- Implementing query handlers
+- Understanding domain layer structure
+- Code reviews for domain logic
 
-**Key Benefits:**
-- Clear separation of concerns
-- Highly testable domain logic
-- Maintainable and scalable architecture
-- Production-proven patterns
+**Key templates included:**
+- New aggregate class
+- Command & handler
+- Query & handler
+- Domain exceptions
 
-## Installation
+---
 
-### Using Claude Code Plugin Command (Recommended)
+### 2. EF Core Data Layer (`ef-core-ddd/`)
 
-Install this skill marketplace directly from GitHub:
+**Purpose**: Implementing the data persistence layer as an adapter in hexagonal architecture using Entity Framework Core.
 
-```bash
-/plugin marketplace add nesbo/dotnet-claude-code-skills
+**What it covers:**
+- DbContext configuration (production & testing)
+- Entity configurations using Fluent API
+- Repository implementations (write & query)
+- Unit of Work implementation
+- Dependency injection auto-registration
+- In-memory database testing support
+- Migration workflow
+- Database schema organization
+- Performance optimization patterns
+
+**When to use:**
+- Adding new aggregates to the database
+- Creating entity configurations
+- Implementing repositories
+- Setting up testing infrastructure
+- Configuring relationships and indexes
+- Optimizing query performance
+- Migration management
+
+**Key templates included:**
+- Entity configuration class
+- Write repository implementation
+- Query repository implementation
+- In-memory test setup
+
+---
+
+## Skill Organization
+
+```
+dotnet-claude-code-skills/
+├── README.md                    # This file - skill index
+├── ddd-dotnet/                  # Domain layer patterns
+│   ├── SKILL.md
+│   └── README.md
+└── ef-core-ddd/                 # Data persistence patterns
+    ├── SKILL.md
+    └── README.md
 ```
 
-Then install the DDD skill:
+---
 
-```bash
-/plugin install ddd-dotnet@nesbo/dotnet-claude-code-skills
+## How to Use These Skills
+
+### In Claude Code Sessions
+
+Reference skills directly in your prompts:
+
+```
+"Using the ddd-dotnet skill, create a new aggregate for Product"
+
+"Following the ef-core-ddd skill, implement the repository for Product"
+
+"Review this code against the patterns in ddd-dotnet/SKILL.md"
 ```
 
-### Manual Installation
+### As Reference Material
 
-Alternatively, you can manually clone and reference the skills:
+- Open skill files in your IDE for quick reference
+- Copy templates as starting points for new code
+- Use checklists before creating pull requests
+- Share with team members for consistency
 
-1. Clone this repository
-2. Reference the skill files in your Claude Code configuration
-3. The skills will be available for Claude to use when working on .NET projects
+### For Code Reviews
 
-## Usage
+Use the "Best Practices" and "Common Pitfalls" sections to:
+- Validate new code follows patterns
+- Identify anti-patterns
+- Suggest improvements
+- Ensure consistency across the codebase
 
-When working with Claude Code on .NET projects, these skills provide:
+---
 
-- Architecture guidance and patterns
-- Code examples and templates
-- Best practices and common pitfalls
-- Quick reference guides
+## Skill Dependencies
 
-Claude will use these skills to help you implement clean, maintainable, and production-ready .NET applications following DDD principles and modern architectural patterns.
+```
+ddd-dotnet/
+        ▲
+        │ (implements interfaces from)
+        │
+ef-core-ddd/
+```
 
-## Skill Structure
+The data layer skill builds on concepts from the DDD basics skill. Read `ddd-dotnet/SKILL.md` first to understand the domain interfaces that the data layer implements.
 
-Each skill folder contains:
-- `SKILL.md` - The main skill documentation with patterns, examples, and guidance
-- `README.md` - Brief overview for GitHub preview
+---
+
+## Architecture Context
+
+These skills support a **hexagonal architecture** (ports and adapters):
+
+```
+┌─────────────────────────────────────────────┐
+│           Adapters (Infrastructure)         │
+│  - API (WebAPI)                             │
+│  - Blazor Apps                              │
+│  - Data (EF Core) ◄── ef-core-ddd          │
+│  - ServiceClients                           │
+└─────────────────────────────────────────────┘
+                     │
+                     ▼
+┌─────────────────────────────────────────────┐
+│             Ports (Domain)                  │
+│  - Aggregates & Entities  ◄── ddd-dotnet   │
+│  - Command Handlers       ◄── ddd-dotnet   │
+│  - Query Handlers         ◄── ddd-dotnet   │
+│  - Repository Interfaces  ◄── ddd-dotnet   │
+└─────────────────────────────────────────────┘
+```
+
+**Key principle:** Adapters depend on Ports, never the reverse.
+
+---
+
+## Pattern Summary
+
+### Domain Layer (ddd-dotnet/)
+- ✅ Aggregates control entities
+- ✅ Business logic in aggregates
+- ✅ Commands for writes
+- ✅ Queries for reads (ViewModels)
+- ✅ IClock for time
+- ✅ Domain exceptions
+
+### Data Layer (ef-core-ddd/)
+- ✅ Entity configurations (Fluent API)
+- ✅ Repository base classes
+- ✅ CQRS separation (write/query)
+- ✅ Auto-registration via reflection
+- ✅ In-memory testing support
+- ✅ Schema organization
+
+---
+
+## Quick Start Workflow
+
+### Adding a New Feature with Both Skills
+
+1. **Domain First** (using `ddd-dotnet/`):
+   ```
+   Create aggregate → Create entity → Create command & handler → Create query & handler
+   ```
+
+2. **Persistence Second** (using `ef-core-ddd/`):
+   ```
+   Create entity config → Create write repo → Create query repo → Create migration → Test
+   ```
+
+3. **Verification**:
+   - Check domain best practices
+   - Check data best practices
+   - Run tests with in-memory database
+   - Review migration SQL
+   - Create pull request
+
+---
+
+## Extending the Skills Library
+
+When adding new skills:
+
+1. **Create new `.md` file** in this directory
+2. **Update this README** with:
+   - Skill name and purpose
+   - What it covers
+   - When to use
+   - Key templates
+   - Dependencies on other skills
+3. **Follow the existing format**:
+   - Overview section
+   - Detailed patterns with code examples
+   - Best practices section
+   - Common pitfalls section
+   - Quick reference templates
+   - Checklist
+
+---
 
 ## Contributing
 
-Feel free to contribute additional skills or improvements to existing ones. Skills should:
+When updating skills:
 
-- Be based on real-world, production-tested patterns
-- Include clear code examples
-- Follow .NET and C# best practices
-- Provide both guidance and practical templates
+- ✅ Keep examples based on real production code
+- ✅ Include both good and bad examples
+- ✅ Provide working code snippets
+- ✅ Add explanatory comments
+- ✅ Update this README if adding new skills
+- ✅ Keep skills focused and cohesive
+- ✅ Cross-reference related skills
 
-## License
+---
 
-This repository is provided as-is for educational and professional development purposes.
+## Skill Maintenance
 
-## About
+These skills are living documents. Update them when:
 
-Created for .NET engineers who want to leverage Claude Code with deep domain expertise in modern .NET architecture patterns, particularly Domain-Driven Design, CQRS, and Hexagonal Architecture.
+- Discovering new patterns worth documenting
+- Finding common mistakes to warn against
+- Refactoring improves existing patterns
+- Technology updates change best practices
+- Team feedback suggests improvements
+
+---
+
+## License & Usage
+
+These skills are internal to the LMP project but can be adapted for other .NET/DDD projects following similar architectural patterns.
+
+---
+
+**Last Updated**: 2025-10-22
+**Skills Version**: 1.0
+**Applicable to**: .NET 8+, EF Core 8+, Hexagonal Architecture, DDD
