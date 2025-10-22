@@ -1,0 +1,24 @@
+{
+  "name": "dotnet-claude-code-skills",
+  "version": "1.0.0",
+  "description": "State-of-the-art .NET development skills for Claude Code, featuring Domain-Driven Design patterns and best practices",
+  "author": "nesbo",
+  "skills": [
+    {
+      "id": "ddd-dotnet",
+      "name": "Domain-Driven Design for .NET",
+      "description": "Comprehensive guide to implementing DDD patterns in .NET with CQRS, Hexagonal Architecture, and best practices from production code",
+      "category": "dotnet",
+      "tags": ["ddd", "domain-driven-design", "cqrs", "hexagonal-architecture", "dotnet", "csharp", "entity-framework", "clean-architecture"],
+      "path": "ddd-dotnet/SKILL.md",
+      "version": "1.0.0"
+    }
+  ],
+  "categories": [
+    {
+      "id": "dotnet",
+      "name": ".NET Development",
+      "description": "Skills for .NET and C# development"
+    }
+  ]
+}
