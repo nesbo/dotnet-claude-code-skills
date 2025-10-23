@@ -1,24 +1,26 @@
 # Using .NET Claude Code Skills with Claude Code
 
-This repository contains production-ready .NET skills designed specifically for use with Claude Code, Anthropic's official CLI for Claude.
+This repository contains production-ready DDD skills designed specifically for use with Claude Code, Anthropic's official CLI for Claude.
+
+> **Universal Applicability**: While explained using C# and .NET, these patterns apply to any object-oriented programming language (Java, TypeScript, Python, etc.). The principles of DDD and hexagonal architecture are language-agnostic.
 
 ## What This Repository Provides
 
-This is a **skills library** for .NET development with Claude Code, focusing on:
+This is a **skills library** for object-oriented development with Claude Code, focusing on:
 
-- **Domain-Driven Design (DDD)** patterns for .NET
-- **Entity Framework Core** data persistence implementations
-- **BDD-Style Unit Testing** with NUnit and InMemory database
+- **Domain-Driven Design (DDD)** patterns (language-agnostic principles)
+- **Data Persistence** implementations (demonstrated with one ORM approach)
+- **BDD-Style Unit Testing** with in-memory database support
 - **Hexagonal Architecture** (Ports and Adapters) patterns
 - **CQRS** command and query separation
 - **Production-tested code** from real-world projects
 
 ## Repository Purpose
 
-This repository serves as a **reference and pattern library** for Claude Code when working on .NET projects. The skills contained here provide:
+This repository serves as a **reference and pattern library** for Claude Code when working on object-oriented projects. The skills contained here provide:
 
-1. **Comprehensive documentation** of DDD, EF Core, and unit testing patterns
-2. **Code templates** for common scenarios
+1. **Comprehensive documentation** of DDD, data persistence, and unit testing patterns
+2. **Code templates** for common scenarios (in C#, adaptable to other languages)
 3. **Best practices** and anti-patterns to avoid
 4. **Quick reference guides** for implementation
 5. **Production-proven examples** from real projects
@@ -68,9 +70,9 @@ Complete guide to implementing Domain-Driven Design in .NET with:
 **Read**: [ddd-dotnet/SKILL.md](ddd-dotnet/SKILL.md)
 
 ### 📁 `ef-core-ddd/`
-Complete guide to implementing Entity Framework Core as a data layer adapter:
-- DbContext configuration
-- Entity configurations (Fluent API)
+Complete guide to implementing data persistence as an adapter layer (demonstrated with one ORM approach):
+- Data context configuration
+- Entity-to-storage mapping
 - Repository implementations
 - Unit of Work pattern
 - Auto-registration with DI
@@ -99,7 +101,7 @@ These skills implement **Hexagonal Architecture** (Ports and Adapters):
 │   Adapters (Infrastructure)    │
 │   - Web API                     │
 │   - Blazor Apps                 │
-│   - Data Layer (EF Core) ◄──────┼─── ef-core-ddd/
+│   - Data Persistence    ◄──────┼─── ef-core-ddd/
 │   - Service Clients             │
 └─────────────────────────────────┘
               ▲
@@ -122,15 +124,17 @@ These skills implement **Hexagonal Architecture** (Ports and Adapters):
 
 **Key Principle**: The domain layer (ports) defines interfaces. The infrastructure layer (adapters) implements them. Dependencies flow inward. Tests verify domain behavior using real repositories.
 
-## Technology Stack
+## Implementation Stack
 
-These skills are designed for:
+These skills are demonstrated using:
 
-- **.NET 8+** (C# 12 features including primary constructors)
-- **Entity Framework Core 8+**
-- **NUnit 3+** for unit testing
-- **Paramore.Brighter** for CQRS command handling
-- **PostgreSQL** (patterns adaptable to other databases)
+- **.NET 8+** with C# 12 (primary constructors, collection expressions)
+- **One ORM approach** for data persistence examples
+- **NUnit 3+** for unit testing examples
+- **Paramore.Brighter** for CQRS command handling (one implementation approach)
+- **PostgreSQL** examples (patterns work with any database)
+
+The underlying DDD and hexagonal architecture patterns apply to any OOP language and technology stack.
 
 ## Example Claude Code Prompts
 
@@ -145,13 +149,13 @@ Here are example prompts to use with Claude Code when referencing these skills:
 "Implement a command handler for UpdateInventory following the ddd-dotnet patterns"
 ```
 
-### Data Layer Development
+### Data Persistence Layer Development
 ```
-"Following ef-core-ddd patterns, create entity configurations for the Order aggregate"
+"Following ef-core-ddd patterns, create data persistence configurations for the Order aggregate"
 
 "Implement write and query repositories for Product using the ef-core-ddd skill"
 
-"Review my EF Core configurations against ef-core-ddd best practices"
+"Review my data persistence configurations against ef-core-ddd best practices"
 ```
 
 ### Unit Testing
@@ -170,7 +174,7 @@ Here are example prompts to use with Claude Code when referencing these skills:
 "Using ddd-dotnet, ef-core-ddd, and bdd-dotnet skills, implement a complete feature for managing product inventory including:
 1. Domain aggregate and entities
 2. Command and query handlers
-3. EF Core configurations
+3. Data persistence configurations
 4. Repositories
 5. Unit tests for all handlers"
 ```
@@ -186,22 +190,24 @@ These skills are based on production code and are continuously refined. They ref
 
 ## Not a Framework or Library
 
-**Important**: This repository is NOT a NuGet package or framework to install. It's a **knowledge base and pattern library** designed to:
+**Important**: This repository is NOT a package or framework to install. It's a **knowledge base and pattern library** designed to:
 
-- Guide Claude Code in generating consistent, high-quality .NET code
-- Provide reference implementations for common patterns
+- Guide Claude Code in generating consistent, high-quality OOP code
+- Provide reference implementations for common patterns (shown in C#)
 - Document best practices and anti-patterns
-- Serve as templates for your own implementations
+- Serve as templates for your own implementations (in any OOP language)
 
 ## Contributing
 
-These skills can be extended with additional .NET patterns:
+These skills can be extended with additional patterns:
 
-- API layer patterns (controllers, minimal APIs)
+- API layer patterns
 - Authentication and authorization patterns
 - Background job processing
 - Event-driven architectures
 - Integration and E2E testing patterns
+- Alternative ORM implementations
+- Other language implementations (Java, TypeScript, Python)
 
 Follow the existing format when adding new skills:
 1. Create a new folder with descriptive name
@@ -215,6 +221,7 @@ This repository is provided for educational and professional development purpose
 
 ---
 
-**Made for**: .NET Engineers using Claude Code
-**Focus**: Domain-Driven Design, CQRS, Hexagonal Architecture
-**Tech**: .NET 8+, EF Core 8+, C# 12
+**Made for**: Software Engineers using Claude Code
+**Focus**: Domain-Driven Design, CQRS, Hexagonal Architecture (language-agnostic)
+**Demonstrated in**: .NET 8+ and C# 12
+**Applicable to**: Any OOP language (Java, TypeScript, Python, etc.)

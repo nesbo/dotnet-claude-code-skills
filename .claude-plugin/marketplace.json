@@ -1,13 +1,13 @@
 {
   "name": "dotnet-claude-code-skills",
   "version": "1.0.0",
-  "description": "Production-ready .NET development skills for Claude Code: Domain-Driven Design, Entity Framework Core, and BDD-style unit testing patterns",
+  "description": "Production-ready DDD skills for Claude Code: Domain-Driven Design, data persistence patterns, and BDD-style unit testing. Explained in C# and .NET but applicable to any OOP language.",
   "author": "nesbo",
   "skills": [
     {
       "id": "ddd-dotnet",
-      "name": "Domain-Driven Design for .NET",
-      "description": "Comprehensive guide to implementing DDD patterns in .NET with CQRS, Hexagonal Architecture, aggregates, entities, command/query handlers, and domain best practices from production code",
+      "name": "Domain-Driven Design Patterns",
+      "description": "Comprehensive guide to implementing DDD patterns with CQRS, Hexagonal Architecture, aggregates, entities, command/query handlers, and domain best practices. Explained using C# and .NET, but patterns apply to any OOP language.",
       "category": "dotnet",
       "tags": ["ddd", "domain-driven-design", "cqrs", "hexagonal-architecture", "dotnet", "csharp", "clean-architecture", "ports-and-adapters"],
       "path": "ddd-dotnet/SKILL.md",
@@ -15,17 +15,17 @@
     },
     {
       "id": "ef-core-ddd",
-      "name": "Entity Framework Core Data Layer",
-      "description": "Complete guide to implementing EF Core as a data persistence adapter in hexagonal architecture with entity configurations, repositories, Unit of Work, and migration workflows",
+      "name": "Data Persistence Layer",
+      "description": "Complete guide to implementing data persistence as an adapter in hexagonal architecture with entity mappings, repositories, Unit of Work, and migration workflows. Demonstrates one ORM approach; patterns apply to any data access technology.",
       "category": "dotnet",
-      "tags": ["entity-framework", "ef-core", "data-layer", "repository-pattern", "dotnet", "csharp", "database", "postgresql", "hexagonal-architecture"],
+      "tags": ["data-persistence", "repository-pattern", "orm", "data-layer", "dotnet", "csharp", "database", "hexagonal-architecture"],
       "path": "ef-core-ddd/SKILL.md",
       "version": "1.0.0"
     },
     {
       "id": "bdd-dotnet",
-      "name": "BDD-Style Unit Testing for .NET",
-      "description": "BDD-style unit testing patterns for domain handlers with NUnit, EF Core InMemory database, TestDataBuilder pattern, fluent builders, and fake implementations - no mocking frameworks",
+      "name": "BDD-Style Unit Testing",
+      "description": "BDD-style unit testing patterns for domain handlers with in-memory database, TestDataBuilder pattern, fluent builders, and fake implementations - no mocking frameworks. Shown with NUnit examples; patterns apply to any testing framework.",
       "category": "dotnet",
       "tags": ["testing", "unit-testing", "bdd", "nunit", "test-driven-development", "dotnet", "csharp", "inmemory-database", "test-patterns"],
       "path": "bdd-dotnet/SKILL.md",
@@ -35,8 +35,8 @@
   "categories": [
     {
       "id": "dotnet",
-      "name": ".NET Development",
-      "description": "Skills for .NET and C# development"
+      "name": "OOP Development",
+      "description": "Skills for object-oriented development (demonstrated in .NET and C#, applicable to any OOP language)"
     }
   ]
 }

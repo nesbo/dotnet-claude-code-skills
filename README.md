@@ -1,6 +1,8 @@
 # .NET Claude Code Skills Library
 
-Production-ready Domain-Driven Design patterns and Entity Framework Core implementations for .NET projects using Claude Code.
+Production-ready Domain-Driven Design patterns and data persistence implementations for .NET projects using Claude Code.
+
+> **Applicability**: While these patterns are explained using C# and .NET, the DDD principles and hexagonal architecture concepts apply to any object-oriented programming language.
 
 > **For Claude Code Users**: See [CLAUDE.md](CLAUDE.md) for information about using this repository with Claude Code.
 
@@ -36,18 +38,18 @@ Production-ready Domain-Driven Design patterns and Entity Framework Core impleme
 
 ---
 
-### 2. EF Core Data Layer (`ef-core-ddd/`)
+### 2. Data Persistence Layer (`ef-core-ddd/`)
 
-**Purpose**: Implementing the data persistence layer as an adapter in hexagonal architecture using Entity Framework Core.
+**Purpose**: Implementing the data persistence layer as an adapter in hexagonal architecture. This skill demonstrates one approach using Entity Framework Core, but the patterns apply to any ORM or data access technology.
 
 **What it covers:**
-- DbContext configuration (production & testing)
-- Entity configurations using Fluent API
+- Data context configuration (production & testing)
+- Entity-to-table mapping and configurations
 - Repository implementations (write & query)
 - Unit of Work implementation
 - Dependency injection auto-registration
 - In-memory database testing support
-- Migration workflow
+- Schema migration workflow
 - Database schema organization
 - Performance optimization patterns
 
@@ -70,7 +72,7 @@ Production-ready Domain-Driven Design patterns and Entity Framework Core impleme
 
 ### 3. BDD-Style Unit Testing (`bdd-dotnet/`)
 
-**Purpose**: Unit testing patterns for domain layer handlers using Behavior-Driven Development style with NUnit and EF Core InMemory database.
+**Purpose**: Unit testing patterns for domain layer handlers using Behavior-Driven Development style with in-memory database support.
 
 **What it covers:**
 - Testing philosophy (hybrid approach with real repositories)
@@ -172,7 +174,7 @@ These skills support a **hexagonal architecture** (ports and adapters):
 │           Adapters (Infrastructure)         │
 │  - API (WebAPI)                             │
 │  - Blazor Apps                              │
-│  - Data (EF Core) ◄── ef-core-ddd          │
+│  - Data Persistence ◄── ef-core-ddd        │
 │  - ServiceClients                           │
 └─────────────────────────────────────────────┘
                      │
@@ -207,8 +209,8 @@ These skills support a **hexagonal architecture** (ports and adapters):
 - ✅ IClock for time
 - ✅ Domain exceptions
 
-### Data Layer (ef-core-ddd/)
-- ✅ Entity configurations (Fluent API)
+### Data Persistence Layer (ef-core-ddd/)
+- ✅ Entity-to-storage mapping
 - ✅ Repository base classes
 - ✅ CQRS separation (write/query)
 - ✅ Auto-registration via reflection
@@ -302,12 +304,13 @@ These skills are living documents. Update them when:
 
 ## About This Repository
 
-**Purpose**: Skills library for .NET development with Claude Code
+**Purpose**: Skills library for object-oriented development with Claude Code
 **Focus**: Domain-Driven Design, CQRS, Hexagonal Architecture
-**Technology**: .NET 8+, EF Core 8+, C# 12
+**Implementation**: Demonstrated in .NET 8+ and C# 12
+**Applicability**: Patterns apply to any OOP language (Java, TypeScript, Python, etc.)
 **Usage**: Reference patterns, code templates, best practices
 
-> These skills are based on production code and can be adapted for any .NET/DDD project following hexagonal architecture patterns.
+> These skills are explained using C# and .NET, but the DDD and hexagonal architecture patterns apply universally to object-oriented programming.
 
 ---
 

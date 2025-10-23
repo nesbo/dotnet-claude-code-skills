@@ -1,19 +1,21 @@
-# EF Core Data Persistence Layer for .NET DDD
+# Data Persistence Layer for DDD
 
-A comprehensive Claude Code skill for implementing Entity Framework Core as an adapter in hexagonal architecture with Domain-Driven Design.
+A comprehensive Claude Code skill for implementing data persistence as an adapter in hexagonal architecture with Domain-Driven Design.
+
+> **Implementation Note**: This skill demonstrates one approach to data persistence using an ORM. The patterns shown here (repository implementation, entity mapping, unit of work) apply regardless of the specific ORM or data access technology you use.
 
 ## What This Skill Covers
 
-This skill provides production-proven patterns for implementing the data persistence layer using EF Core, including:
+This skill provides production-proven patterns for implementing the data persistence layer, including:
 
-- **DbContext Configuration**: Production and design-time setup with migration support
-- **Entity Configurations**: Fluent API patterns for mapping domain objects to database tables
+- **Data Context Configuration**: Production and design-time setup with migration support
+- **Entity Mapping**: Patterns for mapping domain objects to database tables
 - **Repository Implementations**: Write and Query repository base classes with CQRS support
 - **Unit of Work**: Transaction management across multiple repositories
 - **Dependency Injection**: Convention-based auto-registration with validation
 - **Schema Organization**: Multi-schema database design for bounded contexts
-- **Migration Workflow**: Best practices for creating and applying migrations
-- **Performance Optimization**: Eager loading, indexing, and query optimization patterns
+- **Migration Workflow**: Best practices for creating and applying schema changes
+- **Performance Optimization**: Loading strategies, indexing, and query optimization patterns
 
 ## Key Features
 
@@ -28,7 +30,7 @@ This skill provides production-proven patterns for implementing the data persist
 
 ## Complements
 
-This skill builds on the `ddd-dotnet` skill and implements the infrastructure layer (adapter) for the domain layer (ports). The two skills together provide a complete DDD + EF Core implementation guide.
+This skill builds on the `ddd-dotnet` skill and implements the infrastructure layer (adapter) for the domain layer (ports). The two skills together provide a complete DDD + data persistence implementation guide.
 
 ```
 Domain Layer (ddd-dotnet)
@@ -40,26 +42,28 @@ Data Layer (ef-core-ddd)
 
 ## Based On
 
-This skill is based on real production code from the LMP project, implementing modern .NET practices with:
+This skill is based on real production code, implementing modern practices with:
 
 - C# 12 features (primary constructors, collection expressions)
-- Entity Framework Core 8+
-- PostgreSQL (easily adaptable to other databases)
+- ORM for data persistence (demonstrated with one specific implementation)
+- PostgreSQL examples (patterns work with any database)
 - Hexagonal Architecture (ports and adapters)
 - CQRS pattern with separate read/write repositories
 - Convention-based dependency injection
 
+The patterns shown apply universally, regardless of your specific ORM or programming language.
+
 ## Usage
 
-When working on .NET projects with Claude Code, this skill helps you:
+When working on object-oriented projects with Claude Code, this skill helps you:
 
-1. Configure EF Core DbContext for production and testing
-2. Create entity configurations using Fluent API
+1. Configure data context for production and testing
+2. Create entity-to-storage mappings
 3. Implement repositories following CQRS pattern
 4. Set up automatic repository registration
 5. Manage database schemas and migrations
 6. Optimize database queries and performance
-7. Write testable data layer code
+7. Write testable data persistence code
 
 ## Architecture Context
 
@@ -78,8 +82,8 @@ This skill implements the **Data adapter** in hexagonal architecture:
               │
 ┌─────────────────────────────────┐
 │     Data (Adapter)              │
-│  - DbContext                    │
-│  - Entity Configurations        │
+│  - Data Context                 │
+│  - Entity Mappings              │
 │  - Repository Implementations   │
 │  - Service Registrations        │
 └─────────────────────────────────┘
@@ -89,8 +93,8 @@ This skill implements the **Data adapter** in hexagonal architecture:
 
 Read [SKILL.md](SKILL.md) for the complete documentation, including:
 
-- Full DbContext setup with migration support
-- Entity configuration examples for all scenarios
+- Full data context setup with migration support
+- Entity mapping examples for all scenarios
 - Repository base classes and implementations
 - Dependency injection setup
 - Migration workflow
