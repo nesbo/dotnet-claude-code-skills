@@ -8,6 +8,7 @@ This is a **skills library** for .NET development with Claude Code, focusing on:
 
 - **Domain-Driven Design (DDD)** patterns for .NET
 - **Entity Framework Core** data persistence implementations
+- **BDD-Style Unit Testing** with NUnit and InMemory database
 - **Hexagonal Architecture** (Ports and Adapters) patterns
 - **CQRS** command and query separation
 - **Production-tested code** from real-world projects
@@ -16,7 +17,7 @@ This is a **skills library** for .NET development with Claude Code, focusing on:
 
 This repository serves as a **reference and pattern library** for Claude Code when working on .NET projects. The skills contained here provide:
 
-1. **Comprehensive documentation** of DDD and EF Core patterns
+1. **Comprehensive documentation** of DDD, EF Core, and unit testing patterns
 2. **Code templates** for common scenarios
 3. **Best practices** and anti-patterns to avoid
 4. **Quick reference guides** for implementation
@@ -32,6 +33,8 @@ When working with Claude Code on your .NET project, reference skills from this r
 "Using the patterns from dotnet-claude-code-skills/ddd-dotnet, create a new aggregate for Product"
 
 "Following the ef-core-ddd skill, implement the repository for Product"
+
+"Using the bdd-dotnet skill, write unit tests for the CreateProduct command handler"
 
 "Review this code against the patterns in dotnet-claude-code-skills"
 ```
@@ -75,6 +78,18 @@ Complete guide to implementing Entity Framework Core as a data layer adapter:
 
 **Read**: [ef-core-ddd/SKILL.md](ef-core-ddd/SKILL.md)
 
+### 📁 `bdd-dotnet/`
+Complete guide to BDD-style unit testing for domain layer handlers:
+- Testing philosophy (hybrid approach with real repositories)
+- TestDataBuilder and TestContextFactory patterns
+- Fluent aggregate builders for test data
+- Fake implementations (FakeClock, FakeUnitOfWork, etc.)
+- Arrange-Act-Assert pattern
+- NUnit conventions and assertions
+- Testing patterns for commands, queries, workflows, and errors
+
+**Read**: [bdd-dotnet/SKILL.md](bdd-dotnet/SKILL.md)
+
 ## Architecture Context
 
 These skills implement **Hexagonal Architecture** (Ports and Adapters):
@@ -97,9 +112,15 @@ These skills implement **Hexagonal Architecture** (Ports and Adapters):
 │   - Query Handlers              │
 │   - Repository Interfaces       │
 └─────────────────────────────────┘
+              ▲
+              │ tests
+              │
+      ┌───────────────┐
+      │  Unit Tests   │ ◄──────────────── bdd-dotnet/
+      └───────────────┘
 ```
 
-**Key Principle**: The domain layer (ports) defines interfaces. The infrastructure layer (adapters) implements them. Dependencies flow inward.
+**Key Principle**: The domain layer (ports) defines interfaces. The infrastructure layer (adapters) implements them. Dependencies flow inward. Tests verify domain behavior using real repositories.
 
 ## Technology Stack
 
@@ -107,6 +128,7 @@ These skills are designed for:
 
 - **.NET 8+** (C# 12 features including primary constructors)
 - **Entity Framework Core 8+**
+- **NUnit 3+** for unit testing
 - **Paramore.Brighter** for CQRS command handling
 - **PostgreSQL** (patterns adaptable to other databases)
 
@@ -132,13 +154,25 @@ Here are example prompts to use with Claude Code when referencing these skills:
 "Review my EF Core configurations against ef-core-ddd best practices"
 ```
 
+### Unit Testing
+```
+"Using the bdd-dotnet skill, write unit tests for the CreateProduct command handler"
+
+"Following bdd-dotnet patterns, create a test data builder for the Order aggregate"
+
+"Using the bdd-dotnet skill, write tests for workflow state transitions in ImportWorkflow"
+
+"Review my unit tests against the bdd-dotnet best practices"
+```
+
 ### Full Feature Implementation
 ```
-"Using both ddd-dotnet and ef-core-ddd skills, implement a complete feature for managing product inventory including:
+"Using ddd-dotnet, ef-core-ddd, and bdd-dotnet skills, implement a complete feature for managing product inventory including:
 1. Domain aggregate and entities
 2. Command and query handlers
 3. EF Core configurations
-4. Repositories"
+4. Repositories
+5. Unit tests for all handlers"
 ```
 
 ## Skills Are Living Documents
@@ -167,7 +201,7 @@ These skills can be extended with additional .NET patterns:
 - Authentication and authorization patterns
 - Background job processing
 - Event-driven architectures
-- Testing patterns (unit, integration, E2E)
+- Integration and E2E testing patterns
 
 Follow the existing format when adding new skills:
 1. Create a new folder with descriptive name

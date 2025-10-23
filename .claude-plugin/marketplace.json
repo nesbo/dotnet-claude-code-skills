@@ -1,16 +1,34 @@
 {
   "name": "dotnet-claude-code-skills",
   "version": "1.0.0",
-  "description": "State-of-the-art .NET development skills for Claude Code, featuring Domain-Driven Design patterns and best practices",
+  "description": "Production-ready .NET development skills for Claude Code: Domain-Driven Design, Entity Framework Core, and BDD-style unit testing patterns",
   "author": "nesbo",
   "skills": [
     {
       "id": "ddd-dotnet",
       "name": "Domain-Driven Design for .NET",
-      "description": "Comprehensive guide to implementing DDD patterns in .NET with CQRS, Hexagonal Architecture, and best practices from production code",
+      "description": "Comprehensive guide to implementing DDD patterns in .NET with CQRS, Hexagonal Architecture, aggregates, entities, command/query handlers, and domain best practices from production code",
       "category": "dotnet",
-      "tags": ["ddd", "domain-driven-design", "cqrs", "hexagonal-architecture", "dotnet", "csharp", "entity-framework", "clean-architecture"],
+      "tags": ["ddd", "domain-driven-design", "cqrs", "hexagonal-architecture", "dotnet", "csharp", "clean-architecture", "ports-and-adapters"],
       "path": "ddd-dotnet/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "ef-core-ddd",
+      "name": "Entity Framework Core Data Layer",
+      "description": "Complete guide to implementing EF Core as a data persistence adapter in hexagonal architecture with entity configurations, repositories, Unit of Work, and migration workflows",
+      "category": "dotnet",
+      "tags": ["entity-framework", "ef-core", "data-layer", "repository-pattern", "dotnet", "csharp", "database", "postgresql", "hexagonal-architecture"],
+      "path": "ef-core-ddd/SKILL.md",
+      "version": "1.0.0"
+    },
+    {
+      "id": "bdd-dotnet",
+      "name": "BDD-Style Unit Testing for .NET",
+      "description": "BDD-style unit testing patterns for domain handlers with NUnit, EF Core InMemory database, TestDataBuilder pattern, fluent builders, and fake implementations - no mocking frameworks",
+      "category": "dotnet",
+      "tags": ["testing", "unit-testing", "bdd", "nunit", "test-driven-development", "dotnet", "csharp", "inmemory-database", "test-patterns"],
+      "path": "bdd-dotnet/SKILL.md",
       "version": "1.0.0"
     }
   ],
