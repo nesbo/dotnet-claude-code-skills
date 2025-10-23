@@ -68,6 +68,40 @@ Production-ready Domain-Driven Design patterns and Entity Framework Core impleme
 
 ---
 
+### 3. BDD-Style Unit Testing (`bdd-dotnet/`)
+
+**Purpose**: Unit testing patterns for domain layer handlers using Behavior-Driven Development style with NUnit and EF Core InMemory database.
+
+**What it covers:**
+- Testing philosophy (hybrid approach with real repositories)
+- Test project structure and organization
+- TestDataBuilder and TestContextFactory patterns
+- Fluent aggregate builders for test data
+- Fake implementations instead of mocking frameworks
+- Arrange-Act-Assert testing pattern
+- NUnit conventions and assertions
+- Time-dependent testing with FakeClock
+- Parameterized tests with TestCase
+- CSV-driven complex scenario testing
+
+**When to use:**
+- Writing unit tests for command handlers
+- Writing unit tests for query handlers
+- Testing workflow state transitions
+- Testing validation and error handling
+- Setting up test infrastructure
+- Creating test data builders for aggregates
+- Testing time-dependent business logic
+
+**Key templates included:**
+- Test fixture structure
+- TestDataBuilder setup
+- Aggregate builder classes
+- Fake service implementations
+- Common test patterns (commands, queries, workflows, errors)
+
+---
+
 ## Skill Organization
 
 ```
@@ -77,9 +111,12 @@ dotnet-claude-code-skills/
 ├── ddd-dotnet/                  # Domain layer patterns
 │   ├── SKILL.md                 # Comprehensive DDD guide
 │   └── README.md                # DDD overview
-└── ef-core-ddd/                 # Data persistence patterns
-    ├── SKILL.md                 # Comprehensive EF Core guide
-    └── README.md                # EF Core overview
+├── ef-core-ddd/                 # Data persistence patterns
+│   ├── SKILL.md                 # Comprehensive EF Core guide
+│   └── README.md                # EF Core overview
+└── bdd-dotnet/                  # BDD-style unit testing patterns
+    ├── SKILL.md                 # Comprehensive testing guide
+    └── README.md                # Testing overview
 ```
 
 ---
@@ -94,6 +131,7 @@ dotnet-claude-code-skills/
 ```
 "Using the ddd-dotnet skill, create a new aggregate for Product"
 "Following the ef-core-ddd skill, implement the repository for Product"
+"Using the bdd-dotnet skill, write unit tests for the CreateProduct command handler"
 ```
 
 **For Code Reviews:**
@@ -112,13 +150,16 @@ dotnet-claude-code-skills/
 
 ```
 ddd-dotnet/
-        ▲
-        │ (implements interfaces from)
-        │
-ef-core-ddd/
+        ▲                     ▲
+        │                     │
+        │ (implements)        │ (tests)
+        │                     │
+ef-core-ddd/            bdd-dotnet/
 ```
 
-The data layer skill builds on concepts from the DDD basics skill. Read `ddd-dotnet/SKILL.md` first to understand the domain interfaces that the data layer implements.
+- **ef-core-ddd** builds on concepts from **ddd-dotnet** - implements domain interfaces
+- **bdd-dotnet** tests handlers and aggregates from **ddd-dotnet** - uses real repositories from **ef-core-ddd**
+- Read `ddd-dotnet/SKILL.md` first to understand core domain patterns
 
 ---
 
@@ -143,6 +184,13 @@ These skills support a **hexagonal architecture** (ports and adapters):
 │  - Query Handlers         ◄── ddd-dotnet   │
 │  - Repository Interfaces  ◄── ddd-dotnet   │
 └─────────────────────────────────────────────┘
+                     ▲
+                     │ (tests)
+                     │
+           ┌─────────────────────┐
+           │  Unit Tests         │
+           │  (bdd-dotnet)       │
+           └─────────────────────┘
 ```
 
 **Key principle:** Adapters depend on Ports, never the reverse.
@@ -167,11 +215,19 @@ These skills support a **hexagonal architecture** (ports and adapters):
 - ✅ In-memory testing support
 - ✅ Schema organization
 
+### Testing Layer (bdd-dotnet/)
+- ✅ BDD-style test naming
+- ✅ Real repositories with InMemory DB
+- ✅ Fake implementations (no mocking frameworks)
+- ✅ Fluent test data builders
+- ✅ Arrange-Act-Assert pattern
+- ✅ Time control with FakeClock
+
 ---
 
 ## Quick Start Workflow
 
-### Adding a New Feature with Both Skills
+### Adding a New Feature with All Skills
 
 1. **Domain First** (using `ddd-dotnet/`):
    ```
@@ -180,13 +236,18 @@ These skills support a **hexagonal architecture** (ports and adapters):
 
 2. **Persistence Second** (using `ef-core-ddd/`):
    ```
-   Create entity config → Create write repo → Create query repo → Create migration → Test
+   Create entity config → Create write repo → Create query repo → Create migration
    ```
 
-3. **Verification**:
+3. **Testing Third** (using `bdd-dotnet/`):
+   ```
+   Create test fixture → Create aggregate builders → Write handler tests → Run tests
+   ```
+
+4. **Verification**:
    - Check domain best practices
    - Check data best practices
-   - Run tests with in-memory database
+   - Run unit tests with in-memory database
    - Review migration SQL
    - Create pull request
 
