@@ -104,6 +104,37 @@ Production-ready Domain-Driven Design patterns and data persistence implementati
 
 ---
 
+### 4. Add Serena MCP to Your Project (`add-serena/`)
+
+**Purpose**: Integration guide for adding Serena MCP (Model Context Protocol) to any software project for IDE-like semantic code understanding.
+
+**What it covers:**
+- Serena MCP capabilities and benefits
+- Prerequisites checking for your environment
+- Global installation using `claude mcp add` command
+- Project configuration templates (C#, Python, TypeScript, and more)
+- Verification and testing procedures
+- Troubleshooting guide
+- Advanced configurations (monorepos, read-only mode)
+- Common mistakes to avoid
+
+**When to use:**
+- Setting up semantic code understanding in your project
+- Enabling symbol-level code navigation
+- Adding IDE-like capabilities to Claude Code
+- Configuring LSP integration for your language
+- Troubleshooting Serena installation issues
+- Setting up advanced configurations
+
+**Key templates included:**
+- Global installation command
+- Claude Code settings configuration
+- Project-specific YAML configurations
+- Language-specific setup examples
+- Verification commands
+
+---
+
 ## Skill Organization
 
 ```
@@ -116,9 +147,12 @@ dotnet-claude-code-skills/
 ├── ef-core-ddd/                 # Data persistence patterns
 │   ├── SKILL.md                 # Comprehensive EF Core guide
 │   └── README.md                # EF Core overview
-└── bdd-dotnet/                  # BDD-style unit testing patterns
-    ├── SKILL.md                 # Comprehensive testing guide
-    └── README.md                # Testing overview
+├── bdd-dotnet/                  # BDD-style unit testing patterns
+│   ├── SKILL.md                 # Comprehensive testing guide
+│   └── README.md                # Testing overview
+└── add-serena/                  # Serena MCP integration guide
+    ├── SKILL.md                 # Complete installation and configuration guide
+    └── README.md                # Serena MCP overview
 ```
 
 ---
@@ -134,6 +168,7 @@ dotnet-claude-code-skills/
 "Using the ddd-dotnet skill, create a new aggregate for Product"
 "Following the ef-core-ddd skill, implement the repository for Product"
 "Using the bdd-dotnet skill, write unit tests for the CreateProduct command handler"
+"Using the add-serena skill, set up Serena MCP for semantic code understanding"
 ```
 
 **For Code Reviews:**

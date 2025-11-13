@@ -30,6 +30,15 @@
       "tags": ["testing", "unit-testing", "bdd", "nunit", "test-driven-development", "dotnet", "csharp", "inmemory-database", "test-patterns"],
       "path": "bdd-dotnet/SKILL.md",
       "version": "1.0.0"
+    },
+    {
+      "id": "add-serena",
+      "name": "Add Serena MCP to Your Project",
+      "description": "Complete integration guide for adding Serena MCP to any software project. Provides IDE-like semantic code understanding through LSP integration, symbol-level navigation, and precise code editing. Includes prerequisites checking, installation steps, configuration templates for C#, Python, TypeScript and more, troubleshooting guide, and advanced configurations.",
+      "category": "integration",
+      "tags": ["serena", "mcp", "model-context-protocol", "ide", "lsp", "code-understanding", "semantic-navigation", "claude-code", "integration"],
+      "path": "add-serena/SKILL.md",
+      "version": "1.0.0"
     }
   ],
   "categories": [
@@ -37,6 +46,11 @@
       "id": "dotnet",
       "name": "OOP Development",
       "description": "Skills for object-oriented development (demonstrated in .NET and C#, applicable to any OOP language)"
+    },
+    {
+      "id": "integration",
+      "name": "Tool Integration",
+      "description": "Skills for integrating development tools and services with Claude Code"
     }
   ]
 }

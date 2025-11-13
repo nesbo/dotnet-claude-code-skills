@@ -92,6 +92,18 @@ Complete guide to BDD-style unit testing for domain layer handlers:
 
 **Read**: [bdd-dotnet/SKILL.md](bdd-dotnet/SKILL.md)
 
+### 📁 `add-serena/`
+Complete guide to adding Serena MCP for IDE-like semantic code understanding:
+- Per-project configuration with true multi-project support
+- Interactive setup (language, version control, permissions)
+- Portable helper script approach
+- Symbol-level navigation and LSP integration
+- Project-specific memory and state management
+- Decision guides for team vs personal configuration
+- Troubleshooting and migration guides
+
+**Read**: [add-serena/SKILL.md](add-serena/SKILL.md)
+
 ## Architecture Context
 
 These skills implement **Hexagonal Architecture** (Ports and Adapters):
@@ -169,6 +181,19 @@ Here are example prompts to use with Claude Code when referencing these skills:
 "Review my unit tests against the bdd-dotnet best practices"
 ```
 
+### Tool Integration
+```
+"Using the add-serena skill, add Serena MCP to my current project"
+
+"Using add-serena, set up Serena with per-project configuration for this project"
+
+"Following the add-serena skill, add Serena to multiple projects independently"
+
+"Using the add-serena skill, troubleshoot why Serena MCP is not loading"
+
+"Review my Serena configuration against the add-serena best practices"
+```
+
 ### Full Feature Implementation
 ```
 "Using ddd-dotnet, ef-core-ddd, and bdd-dotnet skills, implement a complete feature for managing product inventory including:
@@ -177,6 +202,15 @@ Here are example prompts to use with Claude Code when referencing these skills:
 3. Data persistence configurations
 4. Repositories
 5. Unit tests for all handlers"
+```
+
+### Complete Project Setup
+```
+"Using add-serena skill, add Serena MCP to my project for semantic code understanding"
+
+"Using add-serena and ddd-dotnet skills, set up my project with per-project Serena MCP and foundational DDD patterns"
+
+"Using ddd-dotnet, ef-core-ddd, bdd-dotnet, and add-serena skills, help me set up a complete .NET project with DDD architecture and semantic code understanding"
 ```
 
 ## Skills Are Living Documents
