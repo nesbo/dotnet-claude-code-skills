@@ -1,0 +1,11 @@
+{
+  "name": "bdd-dotnet",
+  "version": "1.0.0",
+  "description": "BDD-style unit testing patterns for domain handlers with in-memory database, TestDataBuilder pattern, fluent builders, and fake implementations - no mocking frameworks. Shown with NUnit examples; patterns apply to any testing framework.",
+  "author": {
+    "name": "nesbo"
+  },
+  "category": "dotnet",
+  "tags": ["testing", "unit-testing", "bdd", "nunit", "test-driven-development", "dotnet", "csharp", "inmemory-database", "test-patterns"],
+  "skills": ["SKILL.md"]
+}

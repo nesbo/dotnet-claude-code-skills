@@ -1,56 +1,40 @@
 {
   "name": "dotnet-claude-code-skills",
-  "version": "1.0.0",
-  "description": "Production-ready DDD skills for Claude Code: Domain-Driven Design, data persistence patterns, and BDD-style unit testing. Explained in C# and .NET but applicable to any OOP language.",
-  "author": "nesbo",
-  "skills": [
+  "owner": {
+    "name": "nesbo"
+  },
+  "plugins": [
     {
-      "id": "ddd-dotnet",
-      "name": "Domain-Driven Design Patterns",
+      "name": "ddd-dotnet",
+      "source": "./ddd-dotnet",
       "description": "Comprehensive guide to implementing DDD patterns with CQRS, Hexagonal Architecture, aggregates, entities, command/query handlers, and domain best practices. Explained using C# and .NET, but patterns apply to any OOP language.",
+      "version": "1.0.0",
       "category": "dotnet",
-      "tags": ["ddd", "domain-driven-design", "cqrs", "hexagonal-architecture", "dotnet", "csharp", "clean-architecture", "ports-and-adapters"],
-      "path": "ddd-dotnet/SKILL.md",
-      "version": "1.0.0"
+      "tags": ["ddd", "domain-driven-design", "cqrs", "hexagonal-architecture", "dotnet", "csharp", "clean-architecture", "ports-and-adapters"]
     },
     {
-      "id": "ef-core-ddd",
-      "name": "Data Persistence Layer",
+      "name": "ef-core-ddd",
+      "source": "./ef-core-ddd",
       "description": "Complete guide to implementing data persistence as an adapter in hexagonal architecture with entity mappings, repositories, Unit of Work, and migration workflows. Demonstrates one ORM approach; patterns apply to any data access technology.",
+      "version": "1.0.0",
       "category": "dotnet",
-      "tags": ["data-persistence", "repository-pattern", "orm", "data-layer", "dotnet", "csharp", "database", "hexagonal-architecture"],
-      "path": "ef-core-ddd/SKILL.md",
-      "version": "1.0.0"
+      "tags": ["data-persistence", "repository-pattern", "orm", "data-layer", "dotnet", "csharp", "database", "hexagonal-architecture"]
     },
     {
-      "id": "bdd-dotnet",
-      "name": "BDD-Style Unit Testing",
+      "name": "bdd-dotnet",
+      "source": "./bdd-dotnet",
       "description": "BDD-style unit testing patterns for domain handlers with in-memory database, TestDataBuilder pattern, fluent builders, and fake implementations - no mocking frameworks. Shown with NUnit examples; patterns apply to any testing framework.",
+      "version": "1.0.0",
       "category": "dotnet",
-      "tags": ["testing", "unit-testing", "bdd", "nunit", "test-driven-development", "dotnet", "csharp", "inmemory-database", "test-patterns"],
-      "path": "bdd-dotnet/SKILL.md",
-      "version": "1.0.0"
+      "tags": ["testing", "unit-testing", "bdd", "nunit", "test-driven-development", "dotnet", "csharp", "inmemory-database", "test-patterns"]
     },
     {
-      "id": "add-serena",
-      "name": "Add Serena MCP to Your Project",
+      "name": "add-serena",
+      "source": "./add-serena",
       "description": "Complete integration guide for adding Serena MCP to any software project. Provides IDE-like semantic code understanding through LSP integration, symbol-level navigation, and precise code editing. Includes prerequisites checking, installation steps, configuration templates for C#, Python, TypeScript and more, troubleshooting guide, and advanced configurations.",
+      "version": "1.0.0",
       "category": "integration",
-      "tags": ["serena", "mcp", "model-context-protocol", "ide", "lsp", "code-understanding", "semantic-navigation", "claude-code", "integration"],
-      "path": "add-serena/SKILL.md",
-      "version": "1.0.0"
-    }
-  ],
-  "categories": [
-    {
-      "id": "dotnet",
-      "name": "OOP Development",
-      "description": "Skills for object-oriented development (demonstrated in .NET and C#, applicable to any OOP language)"
-    },
-    {
-      "id": "integration",
-      "name": "Tool Integration",
-      "description": "Skills for integrating development tools and services with Claude Code"
+      "tags": ["serena", "mcp", "model-context-protocol", "ide", "lsp", "code-understanding", "semantic-navigation", "claude-code", "integration"]
     }
   ]
 }
