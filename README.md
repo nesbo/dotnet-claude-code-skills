@@ -166,34 +166,10 @@ dotnet-claude-code-skills/
 You can install these skills as plugins directly in Claude Code using the `/plugin` command:
 
 ```bash
-/plugin add https://github.com/nesbo/dotnet-claude-code-skills
+/plugin marketplace add https://github.com/nesbo/dotnet-claude-code-skills
 ```
 
 This will install all available skills (ddd-dotnet, data-dotnet, bdd-dotnet, and add-serena) from this repository, making them immediately available in your Claude Code sessions.
-
-**To install individual skills**, you can specify the skill name:
-
-```bash
-/plugin add https://github.com/nesbo/dotnet-claude-code-skills:ddd-dotnet
-/plugin add https://github.com/nesbo/dotnet-claude-code-skills:data-dotnet
-/plugin add https://github.com/nesbo/dotnet-claude-code-skills:bdd-dotnet
-/plugin add https://github.com/nesbo/dotnet-claude-code-skills:add-serena
-```
-
-**To remove plugins**:
-
-```bash
-/plugin remove ddd-dotnet
-/plugin remove data-dotnet
-/plugin remove bdd-dotnet
-/plugin remove add-serena
-```
-
-**To list installed plugins**:
-
-```bash
-/plugin list
-```
 
 ### Quick Reference
 
