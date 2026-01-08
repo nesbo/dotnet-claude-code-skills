@@ -4,6 +4,5 @@
   "description": "BDD-style unit testing patterns for domain handlers with in-memory database, TestDataBuilder pattern, fluent builders, and fake implementations - no mocking frameworks. Shown with NUnit examples; patterns apply to any testing framework.",
   "author": {
     "name": "nesbo"
-  },
-  "skills": ["SKILL.md"]
+  }
 }

@@ -1,9 +1,8 @@
 {
-  "name": "ef-core-ddd",
+  "name": "data-dotnet",
   "version": "1.0.0",
   "description": "Complete guide to implementing data persistence as an adapter in hexagonal architecture with entity mappings, repositories, Unit of Work, and migration workflows. Demonstrates one ORM approach; patterns apply to any data access technology.",
   "author": {
     "name": "nesbo"
-  },
-  "skills": ["SKILL.md"]
+  }
 }

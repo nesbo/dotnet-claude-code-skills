@@ -37,7 +37,7 @@ Domain Layer (ddd-dotnet)
          ▲
          │ implements
          │
-Data Layer (ef-core-ddd)
+Data Layer (data-dotnet)
 ```
 
 ## Based On
