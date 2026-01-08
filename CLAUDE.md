@@ -27,21 +27,55 @@ This repository serves as a **reference and pattern library** for Claude Code wh
 
 ## How to Use with Claude Code
 
-### Option 1: Reference Skills Directly
+### Option 1: Install as Plugins (Recommended)
+
+You can install these skills as plugins directly in Claude Code using the `/plugin` command:
+
+```bash
+/plugin add https://github.com/nesbo/dotnet-claude-code-skills
+```
+
+This will install all available skills (ddd-dotnet, data-dotnet, bdd-dotnet, and add-serena) from this repository, making them immediately available in your Claude Code sessions.
+
+**To install individual skills**, you can specify the skill name:
+
+```bash
+/plugin add https://github.com/nesbo/dotnet-claude-code-skills:ddd-dotnet
+/plugin add https://github.com/nesbo/dotnet-claude-code-skills:data-dotnet
+/plugin add https://github.com/nesbo/dotnet-claude-code-skills:bdd-dotnet
+/plugin add https://github.com/nesbo/dotnet-claude-code-skills:add-serena
+```
+
+**To remove plugins**:
+
+```bash
+/plugin remove ddd-dotnet
+/plugin remove data-dotnet
+/plugin remove bdd-dotnet
+/plugin remove add-serena
+```
+
+**To list installed plugins**:
+
+```bash
+/plugin list
+```
+
+### Option 2: Reference Skills Directly
 
 When working with Claude Code on your .NET project, reference skills from this repository:
 
 ```
 "Using the patterns from dotnet-claude-code-skills/ddd-dotnet, create a new aggregate for Product"
 
-"Following the ef-core-ddd skill, implement the repository for Product"
+"Following the data-dotnet skill, implement the repository for Product"
 
 "Using the bdd-dotnet skill, write unit tests for the CreateProduct command handler"
 
 "Review this code against the patterns in dotnet-claude-code-skills"
 ```
 
-### Option 2: Clone Locally for Reference
+### Option 3: Clone Locally for Reference
 
 Clone this repository to have the skills available as reference material:
 
@@ -52,7 +86,7 @@ cd dotnet-claude-code-skills
 
 Then reference the skills in your Claude Code sessions by providing the path to the skill files.
 
-### Option 3: Copy Patterns into Your Project
+### Option 4: Copy Patterns into Your Project
 
 Copy relevant skill documentation into your own project's documentation folder for project-specific reference.
 
@@ -69,7 +103,7 @@ Complete guide to implementing Domain-Driven Design in .NET with:
 
 **Read**: [ddd-dotnet/SKILL.md](ddd-dotnet/SKILL.md)
 
-### 📁 `ef-core-ddd/`
+### 📁 `data-dotnet/`
 Complete guide to implementing data persistence as an adapter layer (demonstrated with one ORM approach):
 - Data context configuration
 - Entity-to-storage mapping
@@ -78,7 +112,7 @@ Complete guide to implementing data persistence as an adapter layer (demonstrate
 - Auto-registration with DI
 - Migration workflows
 
-**Read**: [ef-core-ddd/SKILL.md](ef-core-ddd/SKILL.md)
+**Read**: [data-dotnet/SKILL.md](data-dotnet/SKILL.md)
 
 ### 📁 `bdd-dotnet/`
 Complete guide to BDD-style unit testing for domain layer handlers:
@@ -110,10 +144,10 @@ These skills implement **Hexagonal Architecture** (Ports and Adapters):
 
 ```
 ┌─────────────────────────────────┐
-│   Adapters (Infrastructure)    │
+│   Adapters (Infrastructure)     │
 │   - Web API                     │
 │   - Blazor Apps                 │
-│   - Data Persistence    ◄──────┼─── ef-core-ddd/
+│   - Data Persistence     ◄──────┼─── data-dotnet/
 │   - Service Clients             │
 └─────────────────────────────────┘
               ▲
@@ -163,11 +197,11 @@ Here are example prompts to use with Claude Code when referencing these skills:
 
 ### Data Persistence Layer Development
 ```
-"Following ef-core-ddd patterns, create data persistence configurations for the Order aggregate"
+"Following data-dotnet patterns, create data persistence configurations for the Order aggregate"
 
-"Implement write and query repositories for Product using the ef-core-ddd skill"
+"Implement write and query repositories for Product using the data-dotnet skill"
 
-"Review my data persistence configurations against ef-core-ddd best practices"
+"Review my data persistence configurations against data-dotnet best practices"
 ```
 
 ### Unit Testing
@@ -196,7 +230,7 @@ Here are example prompts to use with Claude Code when referencing these skills:
 
 ### Full Feature Implementation
 ```
-"Using ddd-dotnet, ef-core-ddd, and bdd-dotnet skills, implement a complete feature for managing product inventory including:
+"Using ddd-dotnet, data-dotnet, and bdd-dotnet skills, implement a complete feature for managing product inventory including:
 1. Domain aggregate and entities
 2. Command and query handlers
 3. Data persistence configurations
@@ -210,7 +244,7 @@ Here are example prompts to use with Claude Code when referencing these skills:
 
 "Using add-serena and ddd-dotnet skills, set up my project with per-project Serena MCP and foundational DDD patterns"
 
-"Using ddd-dotnet, ef-core-ddd, bdd-dotnet, and add-serena skills, help me set up a complete .NET project with DDD architecture and semantic code understanding"
+"Using ddd-dotnet, data-dotnet, bdd-dotnet, and add-serena skills, help me set up a complete .NET project with DDD architecture and semantic code understanding"
 ```
 
 ## Skills Are Living Documents

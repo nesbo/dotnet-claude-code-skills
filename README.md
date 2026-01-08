@@ -38,7 +38,7 @@ Production-ready Domain-Driven Design patterns and data persistence implementati
 
 ---
 
-### 2. Data Persistence Layer (`ef-core-ddd/`)
+### 2. Data Persistence Layer (`data-dotnet/`)
 
 **Purpose**: Implementing the data persistence layer as an adapter in hexagonal architecture. This skill demonstrates one approach using Entity Framework Core, but the patterns apply to any ORM or data access technology.
 
@@ -144,9 +144,9 @@ dotnet-claude-code-skills/
 ├── ddd-dotnet/                  # Domain layer patterns
 │   ├── SKILL.md                 # Comprehensive DDD guide
 │   └── README.md                # DDD overview
-├── ef-core-ddd/                 # Data persistence patterns
-│   ├── SKILL.md                 # Comprehensive EF Core guide
-│   └── README.md                # EF Core overview
+├── data-dotnet/                 # Data persistence patterns
+│   ├── SKILL.md                 # Comprehensive data persistence guide
+│   └── README.md                # Data persistence overview
 ├── bdd-dotnet/                  # BDD-style unit testing patterns
 │   ├── SKILL.md                 # Comprehensive testing guide
 │   └── README.md                # Testing overview
@@ -161,12 +161,46 @@ dotnet-claude-code-skills/
 
 > **Claude Code Users**: For detailed usage instructions with Claude Code, see [CLAUDE.md](CLAUDE.md)
 
+### Installing Plugins with Claude Code
+
+You can install these skills as plugins directly in Claude Code using the `/plugin` command:
+
+```bash
+/plugin add https://github.com/nesbo/dotnet-claude-code-skills
+```
+
+This will install all available skills (ddd-dotnet, data-dotnet, bdd-dotnet, and add-serena) from this repository, making them immediately available in your Claude Code sessions.
+
+**To install individual skills**, you can specify the skill name:
+
+```bash
+/plugin add https://github.com/nesbo/dotnet-claude-code-skills:ddd-dotnet
+/plugin add https://github.com/nesbo/dotnet-claude-code-skills:data-dotnet
+/plugin add https://github.com/nesbo/dotnet-claude-code-skills:bdd-dotnet
+/plugin add https://github.com/nesbo/dotnet-claude-code-skills:add-serena
+```
+
+**To remove plugins**:
+
+```bash
+/plugin remove ddd-dotnet
+/plugin remove data-dotnet
+/plugin remove bdd-dotnet
+/plugin remove add-serena
+```
+
+**To list installed plugins**:
+
+```bash
+/plugin list
+```
+
 ### Quick Reference
 
 **In Code Sessions:**
 ```
 "Using the ddd-dotnet skill, create a new aggregate for Product"
-"Following the ef-core-ddd skill, implement the repository for Product"
+"Following the data-dotnet skill, implement the repository for Product"
 "Using the bdd-dotnet skill, write unit tests for the CreateProduct command handler"
 "Using the add-serena skill, set up Serena MCP for semantic code understanding"
 ```
@@ -191,11 +225,11 @@ ddd-dotnet/
         │                     │
         │ (implements)        │ (tests)
         │                     │
-ef-core-ddd/            bdd-dotnet/
+data-dotnet/            bdd-dotnet/
 ```
 
-- **ef-core-ddd** builds on concepts from **ddd-dotnet** - implements domain interfaces
-- **bdd-dotnet** tests handlers and aggregates from **ddd-dotnet** - uses real repositories from **ef-core-ddd**
+- **data-dotnet** builds on concepts from **ddd-dotnet** - implements domain interfaces
+- **bdd-dotnet** tests handlers and aggregates from **ddd-dotnet** - uses real repositories from **data-dotnet**
 - Read `ddd-dotnet/SKILL.md` first to understand core domain patterns
 
 ---
@@ -209,17 +243,17 @@ These skills support a **hexagonal architecture** (ports and adapters):
 │           Adapters (Infrastructure)         │
 │  - API (WebAPI)                             │
 │  - Blazor Apps                              │
-│  - Data Persistence ◄── ef-core-ddd        │
+│  - Data Persistence ◄── data-dotnet         │
 │  - ServiceClients                           │
 └─────────────────────────────────────────────┘
                      │
                      ▼
 ┌─────────────────────────────────────────────┐
 │             Ports (Domain)                  │
-│  - Aggregates & Entities  ◄── ddd-dotnet   │
-│  - Command Handlers       ◄── ddd-dotnet   │
-│  - Query Handlers         ◄── ddd-dotnet   │
-│  - Repository Interfaces  ◄── ddd-dotnet   │
+│  - Aggregates & Entities  ◄── ddd-dotnet    │
+│  - Command Handlers       ◄── ddd-dotnet    │
+│  - Query Handlers         ◄── ddd-dotnet    │
+│  - Repository Interfaces  ◄── ddd-dotnet    │
 └─────────────────────────────────────────────┘
                      ▲
                      │ (tests)
@@ -244,7 +278,7 @@ These skills support a **hexagonal architecture** (ports and adapters):
 - ✅ IClock for time
 - ✅ Domain exceptions
 
-### Data Persistence Layer (ef-core-ddd/)
+### Data Persistence Layer (data-dotnet/)
 - ✅ Entity-to-storage mapping
 - ✅ Repository base classes
 - ✅ CQRS separation (write/query)
@@ -271,7 +305,7 @@ These skills support a **hexagonal architecture** (ports and adapters):
    Create aggregate → Create entity → Create command & handler → Create query & handler
    ```
 
-2. **Persistence Second** (using `ef-core-ddd/`):
+2. **Persistence Second** (using `data-dotnet/`):
    ```
    Create entity config → Create write repo → Create query repo → Create migration
    ```

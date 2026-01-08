@@ -110,7 +110,7 @@ public class CreateProductCommandHandlerTests
 ## Related Skills
 
 - **ddd-dotnet/**: Defines the domain handlers and aggregates being tested
-- **ef-core-ddd/**: Provides repository implementations used in tests
+- **data-dotnet/**: Provides repository implementations used in tests
 
 ## Structure
 
