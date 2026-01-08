@@ -5,7 +5,5 @@
   "author": {
     "name": "nesbo"
   },
-  "category": "integration",
-  "tags": ["serena", "mcp", "model-context-protocol", "ide", "lsp", "code-understanding", "semantic-navigation", "claude-code", "integration"],
   "skills": ["SKILL.md"]
 }

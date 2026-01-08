@@ -5,7 +5,5 @@
   "author": {
     "name": "nesbo"
   },
-  "category": "dotnet",
-  "tags": ["testing", "unit-testing", "bdd", "nunit", "test-driven-development", "dotnet", "csharp", "inmemory-database", "test-patterns"],
   "skills": ["SKILL.md"]
 }

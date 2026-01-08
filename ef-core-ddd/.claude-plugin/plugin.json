@@ -5,7 +5,5 @@
   "author": {
     "name": "nesbo"
   },
-  "category": "dotnet",
-  "tags": ["data-persistence", "repository-pattern", "orm", "data-layer", "dotnet", "csharp", "database", "hexagonal-architecture"],
   "skills": ["SKILL.md"]
 }
