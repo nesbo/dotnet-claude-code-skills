@@ -1,6 +1,6 @@
 {
   "name": "ddd-dotnet",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Comprehensive guide to implementing DDD patterns with CQRS, Hexagonal Architecture, aggregates, entities, command/query handlers, and domain best practices. Explained using C# and .NET, but patterns apply to any OOP language.",
   "author": {
     "name": "nesbo"
