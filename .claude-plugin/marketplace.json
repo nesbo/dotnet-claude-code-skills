@@ -8,7 +8,7 @@
       "name": "ddd-dotnet",
       "source": "./ddd-dotnet",
       "description": "Comprehensive guide to implementing DDD patterns with CQRS, Hexagonal Architecture, aggregates, entities, command/query handlers, and domain best practices. Explained using C# and .NET, but patterns apply to any OOP language.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "category": "dotnet",
       "tags": ["ddd", "domain-driven-design", "cqrs", "hexagonal-architecture", "dotnet", "csharp", "clean-architecture", "ports-and-adapters"]
     },
