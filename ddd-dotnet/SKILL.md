@@ -269,6 +269,7 @@ public interface IQueryRepository<TAggregate> where TAggregate : class, IAggrega
 - **Read operations**: Use `IQueryRepository<TAggregate>` in query handlers
 - Write repositories can check existence and add entities
 - Query repositories are simpler and optimized for reads
+- In command handlers where you need to load(read) then update the aggregate and save, use the write repository to load the aggregate. The query repository does not track the entity and the save on the write repository will do nothing if the aggregate is loaded with the query repository.
 
 ### Specific Repository Interfaces
 
