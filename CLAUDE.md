@@ -1,75 +1,55 @@
-# Using .NET Claude Code Skills with Claude Code
+# Claude Code - Complete .NET Engineering Team
 
-This repository contains production-ready DDD skills designed specifically for use with Claude Code, Anthropic's official CLI for Claude.
+**Your AI-powered engineering team for production-ready .NET development.**
 
-> **Universal Applicability**: While explained using C# and .NET, these patterns apply to any object-oriented programming language (Java, TypeScript, Python, etc.). The principles of DDD and hexagonal architecture are language-agnostic.
+This repository provides a complete engineering team of specialized AI agents, each an expert in their domain, working together to build applications using Domain-Driven Design, CQRS, and Hexagonal Architecture.
 
-## What This Repository Provides
+> **Universal Applicability**: While demonstrated with C# and .NET, these patterns apply to any object-oriented programming language (Java, TypeScript, Python, etc.). The principles of DDD and hexagonal architecture are language-agnostic.
 
-This is a **skills library** for object-oriented development with Claude Code, focusing on:
+## Your Engineering Team
 
-- **Domain-Driven Design (DDD)** patterns (language-agnostic principles)
-- **Data Persistence** implementations (demonstrated with one ORM approach)
-- **BDD-Style Unit Testing** with in-memory database support
-- **Hexagonal Architecture** (Ports and Adapters) patterns
-- **CQRS** command and query separation
-- **Production-tested code** from real-world projects
+**4 specialized agents working as a cohesive team:**
 
-## Repository Purpose
+- 🟢 **Domain Engineer** (Sonnet) - Implements domain logic and business rules
+- 🔴 **QA Specialist** (Sonnet) - Writes comprehensive BDD-style tests
+- 🟡 **Data Engineer** (Sonnet) - Implements data persistence layer
+- 🟣 **Software Architect** (Opus) - Provides architectural guidance
 
-This repository serves as a **reference and pattern library** for Claude Code when working on object-oriented projects. The skills contained here provide:
+**3 comprehensive skill guides** that agents reference:
 
-1. **Comprehensive documentation** of DDD, data persistence, and unit testing patterns
-2. **Code templates** for common scenarios (in C#, adaptable to other languages)
-3. **Best practices** and anti-patterns to avoid
-4. **Quick reference guides** for implementation
-5. **Production-proven examples** from real projects
+- **ddd-dotnet** - Domain-Driven Design patterns
+- **data-dotnet** - Data persistence implementations
+- **bdd-dotnet** - BDD-style unit testing patterns
 
-## How to Use with Claude Code
+## What You Get
 
-### Option 1: Install as Plugins (Recommended)
+This engineering team provides:
 
-You can install these skills as plugins directly in Claude Code using the `/plugin` command:
+1. **Specialized AI agents** - Each agent is an expert in their domain (domain logic, testing, data, architecture)
+2. **Comprehensive knowledge base** - Production-proven patterns and best practices
+3. **Guided workflows** - Agents work together on complete features
+4. **Consistent implementation** - All code follows the same architectural patterns
+5. **Quality assurance** - Built-in testing and architectural review
+
+## Installation
+
+### Install Your Engineering Team
+
+Install the complete team in Claude Code using the `/plugin` command:
 
 ```bash
 /plugin marketplace add https://github.com/nesbo/dotnet-claude-code-skills
 ```
 
-This will install all available skills (ddd-dotnet, data-dotnet, bdd-dotnet, and add-serena) from this repository, making them immediately available in your Claude Code sessions.
+This installs:
+- **4 specialized agents** (dotnet-agents plugin)
+- **3 comprehensive skills** (ddd-dotnet, data-dotnet, bdd-dotnet)
 
+The agents will automatically reference the skills when working on your code.
 
-### Option 2: Reference Skills Directly
+## Knowledge Base
 
-When working with Claude Code on your .NET project, reference skills from this repository:
-
-```
-"Using the patterns from dotnet-claude-code-skills/ddd-dotnet, create a new aggregate for Product"
-
-"Following the data-dotnet skill, implement the repository for Product"
-
-"Using the bdd-dotnet skill, write unit tests for the CreateProduct command handler"
-
-"Review this code against the patterns in dotnet-claude-code-skills"
-```
-
-### Option 3: Clone Locally for Reference
-
-Clone this repository to have the skills available as reference material:
-
-```bash
-git clone https://github.com/nesbo/dotnet-claude-code-skills.git
-cd dotnet-claude-code-skills
-```
-
-Then reference the skills in your Claude Code sessions by providing the path to the skill files.
-
-### Option 4: Copy Patterns into Your Project
-
-Copy relevant skill documentation into your own project's documentation folder for project-specific reference.
-
-## What's Inside
-
-### 📁 `ddd-dotnet/`
+### 📁 `skills/ddd-dotnet/`
 Complete guide to implementing Domain-Driven Design in .NET with:
 - Aggregate and Entity patterns
 - Command and Query handlers (CQRS)
@@ -78,9 +58,9 @@ Complete guide to implementing Domain-Driven Design in .NET with:
 - Time control patterns (IClock)
 - Quick reference templates
 
-**Read**: [ddd-dotnet/SKILL.md](ddd-dotnet/SKILL.md)
+**Read**: [skills/ddd-dotnet/SKILL.md](skills/ddd-dotnet/SKILL.md)
 
-### 📁 `data-dotnet/`
+### 📁 `skills/data-dotnet/`
 Complete guide to implementing data persistence as an adapter layer (demonstrated with one ORM approach):
 - Data context configuration
 - Entity-to-storage mapping
@@ -89,9 +69,9 @@ Complete guide to implementing data persistence as an adapter layer (demonstrate
 - Auto-registration with DI
 - Migration workflows
 
-**Read**: [data-dotnet/SKILL.md](data-dotnet/SKILL.md)
+**Read**: [skills/data-dotnet/SKILL.md](skills/data-dotnet/SKILL.md)
 
-### 📁 `bdd-dotnet/`
+### 📁 `skills/bdd-dotnet/`
 Complete guide to BDD-style unit testing for domain layer handlers:
 - Testing philosophy (hybrid approach with real repositories)
 - TestDataBuilder and TestContextFactory patterns
@@ -101,51 +81,47 @@ Complete guide to BDD-style unit testing for domain layer handlers:
 - NUnit conventions and assertions
 - Testing patterns for commands, queries, workflows, and errors
 
-**Read**: [bdd-dotnet/SKILL.md](bdd-dotnet/SKILL.md)
+**Read**: [skills/bdd-dotnet/SKILL.md](skills/bdd-dotnet/SKILL.md)
 
-### 📁 `add-serena/`
-Complete guide to adding Serena MCP for IDE-like semantic code understanding:
-- Per-project configuration with true multi-project support
-- Interactive setup (language, version control, permissions)
-- Portable helper script approach
-- Symbol-level navigation and LSP integration
-- Project-specific memory and state management
-- Decision guides for team vs personal configuration
-- Troubleshooting and migration guides
+---
 
-**Read**: [add-serena/SKILL.md](add-serena/SKILL.md)
+## Architecture
 
-## Architecture Context
-
-These skills implement **Hexagonal Architecture** (Ports and Adapters):
+Your engineering team builds applications using **Hexagonal Architecture** (Ports and Adapters):
 
 ```
-┌─────────────────────────────────┐
-│   Adapters (Infrastructure)     │
-│   - Web API                     │
-│   - Blazor Apps                 │
-│   - Data Persistence     ◄──────┼─── data-dotnet/
-│   - Service Clients             │
-└─────────────────────────────────┘
-              ▲
-              │ implements
-              ▼
-┌─────────────────────────────────┐
-│   Ports (Domain Layer)          │
-│   - Aggregates & Entities ◄─────┼─── ddd-dotnet/
-│   - Command Handlers            │
-│   - Query Handlers              │
-│   - Repository Interfaces       │
-└─────────────────────────────────┘
-              ▲
-              │ tests
-              │
-      ┌───────────────┐
-      │  Unit Tests   │ ◄──────────────── bdd-dotnet/
-      └───────────────┘
+┌─────────────────────────────────────────────┐
+│           Adapters (Infrastructure)         │
+│  - API (WebAPI)                             │
+│  - Blazor Apps                              │
+│  - Data Persistence ◄─ 🟡 Data Engineer     │
+│  - ServiceClients      (data-dotnet skill)  │
+└─────────────────────────────────────────────┘
+                     │
+                     ▼
+┌─────────────────────────────────────────────┐
+│             Ports (Domain)                  │
+│  - Aggregates & Entities ◄─ 🟢 Domain       │
+│  - Command Handlers           Engineer      │
+│  - Query Handlers          (ddd-dotnet)     │
+│  - Repository Interfaces                    │
+│                                             │
+│  Architecture Review ◄───── 🟣 Architect    │
+│                           (all skills)      │
+└─────────────────────────────────────────────┘
+                     ▲
+                     │ (tests)
+                     │
+           ┌─────────────────────┐
+           │  Unit Tests         │
+           │  🔴 QA Specialist   │
+           │  (bdd-dotnet skill) │
+           └─────────────────────┘
 ```
 
-**Key Principle**: The domain layer (ports) defines interfaces. The infrastructure layer (adapters) implements them. Dependencies flow inward. Tests verify domain behavior using real repositories.
+**Core Principle**: Adapters depend on Ports, never the reverse.
+
+**How it works**: Each agent is responsible for their layer and automatically references the appropriate skill documentation.
 
 ## Implementation Stack
 
@@ -161,104 +137,99 @@ The underlying DDD and hexagonal architecture patterns apply to any OOP language
 
 ## Example Claude Code Prompts
 
-Here are example prompts to use with Claude Code when referencing these skills:
+### Working with Your Engineering Team
 
-### Domain Layer Development
+#### Domain Implementation with Agents
 ```
-"Using the ddd-dotnet skill patterns, create a new Order aggregate that tracks order status changes"
+"Use the ddd-domain-engineer agent to create a new Order aggregate"
 
-"Review my ShoppingCart aggregate against the ddd-dotnet best practices"
+"Use the ddd-domain-engineer agent to implement a command handler for UpdateInventory"
 
-"Implement a command handler for UpdateInventory following the ddd-dotnet patterns"
-```
-
-### Data Persistence Layer Development
-```
-"Following data-dotnet patterns, create data persistence configurations for the Order aggregate"
-
-"Implement write and query repositories for Product using the data-dotnet skill"
-
-"Review my data persistence configurations against data-dotnet best practices"
+"Use the ddd-domain-engineer agent to refactor the ShoppingCart aggregate"
 ```
 
-### Unit Testing
+#### Testing with Agents
 ```
-"Using the bdd-dotnet skill, write unit tests for the CreateProduct command handler"
+"Use the bdd-qa-specialist agent to write tests for CreateProduct handler"
 
-"Following bdd-dotnet patterns, create a test data builder for the Order aggregate"
+"Use the bdd-qa-specialist agent to plan test scenarios for the Driver aggregate"
 
-"Using the bdd-dotnet skill, write tests for workflow state transitions in ImportWorkflow"
-
-"Review my unit tests against the bdd-dotnet best practices"
+"Use the bdd-qa-specialist agent to create end-to-end tests for order fulfillment workflow"
 ```
 
-### Tool Integration
+#### Data Layer with Agents
 ```
-"Using the add-serena skill, add Serena MCP to my current project"
+"Use the data-layer-engineer agent to implement repositories for Product"
 
-"Using add-serena, set up Serena with per-project configuration for this project"
+"Use the data-layer-engineer agent to optimize the shipment list query"
 
-"Following the add-serena skill, add Serena to multiple projects independently"
-
-"Using the add-serena skill, troubleshoot why Serena MCP is not loading"
-
-"Review my Serena configuration against the add-serena best practices"
+"Use the data-layer-engineer agent to create entity configurations for Order aggregate"
 ```
 
-### Full Feature Implementation
+#### Architecture Review with Agents
 ```
-"Using ddd-dotnet, data-dotnet, and bdd-dotnet skills, implement a complete feature for managing product inventory including:
-1. Domain aggregate and entities
-2. Command and query handlers
-3. Data persistence configurations
-4. Repositories
-5. Unit tests for all handlers"
-```
+"Use the hexagonal-architecture-modeler agent to review my architecture"
 
-### Complete Project Setup
-```
-"Using add-serena skill, add Serena MCP to my project for semantic code understanding"
+"Use the hexagonal-architecture-modeler agent to design a payment processing feature"
 
-"Using add-serena and ddd-dotnet skills, set up my project with per-project Serena MCP and foundational DDD patterns"
-
-"Using ddd-dotnet, data-dotnet, bdd-dotnet, and add-serena skills, help me set up a complete .NET project with DDD architecture and semantic code understanding"
+"Use the hexagonal-architecture-modeler agent to refactor this code to follow hexagonal architecture"
 ```
 
-## Skills Are Living Documents
+#### Complete Feature Workflow
+```
+"Use the hexagonal-architecture-modeler to design a payment feature,
+then the ddd-domain-engineer to implement domain logic,
+the data-layer-engineer for persistence,
+and the bdd-qa-specialist to write comprehensive tests"
+```
 
-These skills are based on production code and are continuously refined. They reflect:
+### Referencing Skills Directly (Manual Work)
+
+If you prefer to implement manually, reference the skill documentation:
+
+```
+"Following the ddd-dotnet skill, create an Order aggregate"
+"Using data-dotnet patterns, implement a repository for Product"
+"Review my code against the bdd-dotnet testing patterns"
+```
+
+### When to Use What
+
+**Use Agents when:**
+- You want guided, semi-automated implementation
+- You're implementing complete features
+- You want the team to work together on complex tasks
+
+**Reference Skills when:**
+- You want to implement manually but follow patterns
+- You're doing code reviews
+- You need quick pattern lookups
+
+## Production-Ready Patterns
+
+The knowledge base and agents are built from real-world production code and reflect:
 
 - Modern .NET best practices
 - Real-world architectural patterns
 - Lessons learned from production systems
 - Industry-standard approaches to DDD and CQRS
 
-## Not a Framework or Library
+All patterns apply to any OOP language (Java, TypeScript, Python, etc.)
 
-**Important**: This repository is NOT a package or framework to install. It's a **knowledge base and pattern library** designed to:
+## Future Enhancements
 
-- Guide Claude Code in generating consistent, high-quality OOP code
-- Provide reference implementations for common patterns (shown in C#)
-- Document best practices and anti-patterns
-- Serve as templates for your own implementations (in any OOP language)
+**Additional team members** could include:
+- API Layer Engineer (REST/GraphQL endpoints)
+- Security Engineer (authentication, authorization)
+- Integration Engineer (external services, messaging)
+- Performance Engineer (optimization, caching)
 
-## Contributing
-
-These skills can be extended with additional patterns:
-
+**Additional skills** could cover:
 - API layer patterns
-- Authentication and authorization patterns
+- Authentication and authorization
 - Background job processing
 - Event-driven architectures
-- Integration and E2E testing patterns
-- Alternative ORM implementations
-- Other language implementations (Java, TypeScript, Python)
-
-Follow the existing format when adding new skills:
-1. Create a new folder with descriptive name
-2. Add `SKILL.md` with comprehensive documentation
-3. Add `README.md` with overview
-4. Update main `README.md` to reference the new skill
+- Performance optimization
 
 ## License
 
@@ -266,7 +237,7 @@ This repository is provided for educational and professional development purpose
 
 ---
 
-**Made for**: Software Engineers using Claude Code
-**Focus**: Domain-Driven Design, CQRS, Hexagonal Architecture (language-agnostic)
+**Your Engineering Team**: 4 specialized AI agents + 3 comprehensive skill guides
+**Architecture**: Domain-Driven Design, CQRS, Hexagonal Architecture
 **Demonstrated in**: .NET 8+ and C# 12
 **Applicable to**: Any OOP language (Java, TypeScript, Python, etc.)

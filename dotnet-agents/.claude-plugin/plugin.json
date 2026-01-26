@@ -1,0 +1,8 @@
+{
+  "name": "dotnet-agents",
+  "version": "1.0.0",
+  "description": "Specialized development agents for .NET DDD projects: domain engineering, data layer implementation, BDD testing, and architecture modeling. Works with ddd-dotnet, data-dotnet, and bdd-dotnet skill plugins.",
+  "author": {
+    "name": "nesbo"
+  }
+}

@@ -1,8 +1,0 @@
-{
-  "name": "add-serena",
-  "version": "1.0.0",
-  "description": "Complete integration guide for adding Serena MCP to any software project. Provides IDE-like semantic code understanding through LSP integration, symbol-level navigation, and precise code editing. Includes prerequisites checking, installation steps, configuration templates for C#, Python, TypeScript and more, troubleshooting guide, and advanced configurations.",
-  "author": {
-    "name": "nesbo"
-  }
-}

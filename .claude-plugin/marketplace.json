@@ -6,7 +6,7 @@
   "plugins": [
     {
       "name": "ddd-dotnet",
-      "source": "./ddd-dotnet",
+      "source": "./skills/ddd-dotnet",
       "description": "Comprehensive guide to implementing DDD patterns with CQRS, Hexagonal Architecture, aggregates, entities, command/query handlers, and domain best practices. Explained using C# and .NET, but patterns apply to any OOP language.",
       "version": "1.0.1",
       "category": "dotnet",
@@ -14,7 +14,7 @@
     },
     {
       "name": "data-dotnet",
-      "source": "./data-dotnet",
+      "source": "./skills/data-dotnet",
       "description": "Complete guide to implementing data persistence as an adapter in hexagonal architecture with entity mappings, repositories, Unit of Work, and migration workflows. Demonstrates one ORM approach; patterns apply to any data access technology.",
       "version": "1.0.0",
       "category": "dotnet",
@@ -22,19 +22,19 @@
     },
     {
       "name": "bdd-dotnet",
-      "source": "./bdd-dotnet",
+      "source": "./skills/bdd-dotnet",
       "description": "BDD-style unit testing patterns for domain handlers with in-memory database, TestDataBuilder pattern, fluent builders, and fake implementations - no mocking frameworks. Shown with NUnit examples; patterns apply to any testing framework.",
       "version": "1.0.0",
       "category": "dotnet",
       "tags": ["testing", "unit-testing", "bdd", "nunit", "test-driven-development", "dotnet", "csharp", "inmemory-database", "test-patterns"]
     },
     {
-      "name": "add-serena",
-      "source": "./add-serena",
-      "description": "Complete integration guide for adding Serena MCP to any software project. Provides IDE-like semantic code understanding through LSP integration, symbol-level navigation, and precise code editing. Includes prerequisites checking, installation steps, configuration templates for C#, Python, TypeScript and more, troubleshooting guide, and advanced configurations.",
+      "name": "dotnet-agents",
+      "source": "./dotnet-agents",
+      "description": "Specialized development agents for .NET DDD projects including domain engineering, data layer implementation, BDD testing, and architecture modeling. Works with ddd-dotnet, data-dotnet, and bdd-dotnet skill plugins.",
       "version": "1.0.0",
-      "category": "integration",
-      "tags": ["serena", "mcp", "model-context-protocol", "ide", "lsp", "code-understanding", "semantic-navigation", "claude-code", "integration"]
+      "category": "agents",
+      "tags": ["agents", "workflow", "ddd", "testing", "data-layer", "architecture", "dotnet", "csharp", "hexagonal-architecture", "cqrs"]
     }
   ]
 }

@@ -1,0 +1,7 @@
+# Placeholder for future command implementations
+#
+# Planned commands:
+# - /ddd-create-aggregate
+# - /ddd-create-handler
+# - /data-create-repo
+# - /test-handler
